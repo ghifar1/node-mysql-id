@@ -1,12 +1,9 @@
 {
-  "name": "@ghifar1/node-mysql-id",
-  "version": "1.0.0",
+  "name": "node-mysql-id",
+  "version": "1.0.2",
   "description": "MYSQL query builder with indonesian language",
   "main": "index.js",
-  "author": {
-    "name": "ghifari",
-    "email": "muhamadalghifari97@gmail.com"
-  },
+  "author": "ghifari",
   "repository": {
     "type": "git",
     "url": "https://github.com/ghifar1/node-mysql-id"

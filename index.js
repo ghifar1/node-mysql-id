@@ -8,7 +8,9 @@ const mysql_1 = __importDefault(require("mysql"));
 class MysqlId {
     constructor() {
         this.sequel = '';
-        this.koneksi = mysql_1.default.createConnection('');
+        this.koneksi = mysql_1.default.createConnection({
+            database: 'localhost',
+        });
     }
     async hubungkan(configuration) {
         this.koneksi = mysql_1.default.createConnection(configuration);

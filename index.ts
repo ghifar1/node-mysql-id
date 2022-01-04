@@ -11,7 +11,9 @@ class MysqlId {
 
     constructor() {
         this.sequel = ''
-        this.koneksi = mysql.createConnection('')
+        this.koneksi = mysql.createConnection({
+            database: 'localhost',
+        })
     }
 
     public async hubungkan(configuration: ConnectionConfig) {
@@ -74,7 +76,7 @@ class MysqlId {
     public async KueriMentah(kueri: string) {
         return new Promise<HasilQuery>((resolve, reject) => {
             this.koneksi.query(kueri, (error, result, fields) => {
-                if(error) reject(error)
+                if (error) reject(error)
                 resolve({
                     hasil: result,
                     infoField: fields!
