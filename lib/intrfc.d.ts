@@ -17,6 +17,7 @@ interface Operator {
     dan<TThis>(this: TThis, val: string | number): TThis
     urutBerdasarkan<TThis>(this: TThis, atribut: string): TThis
     dapatPertama(): Promise<HasilQuery>
+    dataPertama(): Promise<HasilQuery>
     semuaData(): Promise<HasilQuery>
     
 }

@@ -107,9 +107,27 @@ class MysqlId {
         this.sequel += ` ORDER BY ${atribut}`
     }
 
+    public async dataPertama(): Operator {
+        return new Promise<HasilQuery>((resolve, reject) => {
+            this.koneksi.query(this.sequel, (error, result, fields) => {
+                if (error) reject(error)
+
+                if (result[0]) {
+                    resolve({
+                        hasil: result[0],
+                        infoField: fields!
+                    });
+                } else {
+                    resolve(result)
+                }
+
+            })
+        })
+    }
+
 
     /**
-    * @deprecated The method should not be used
+    * @deprecated gunakan dataPertama()
     */
     public async dapatPertama(): Operator {
         return new Promise<HasilQuery>((resolve, reject) => {

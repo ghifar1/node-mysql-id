@@ -8,7 +8,6 @@ function coba() {
 		password: "",
 	});
 
-
 	mysqlId
 		.pilihAtribut("*")
 		.dariTabel("users")
