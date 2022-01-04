@@ -1,0 +1,15 @@
+{
+  "name": "node-mysql-id",
+  "version": "0.0.1",
+  "description": "MYSQL query builder with indonesian language",
+  "main": "index.js",
+  "author": "ghifari",
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/mysql": "^2.15.20"
+  }
+}
