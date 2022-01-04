@@ -1,6 +1,6 @@
 {
   "name": "@ghifar1/node-mysql-id",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "MYSQL query builder with indonesian language",
   "main": "index.js",
   "author": {
