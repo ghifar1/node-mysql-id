@@ -3,7 +3,18 @@
   "version": "0.0.1",
   "description": "MYSQL query builder with indonesian language",
   "main": "index.js",
-  "author": "ghifari",
+  "author": {
+    "name": "ghifari",
+    "email": "muhamadalghifari97@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghifar1/node-mysql-id"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/ghifar1"
+  },
+  "keywords": ["mysql", "node-mysql", "mysql-id"],
   "license": "MIT",
   "dependencies": {
     "mysql": "^2.18.1"
