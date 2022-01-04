@@ -1,6 +1,6 @@
 {
   "name": "node-mysql-id",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "MYSQL query builder with indonesian language",
   "main": "index.js",
   "author": "ghifari",
