@@ -1,5 +1,5 @@
 {
-  "name": "@ghifar1/node-mysql-id",
+  "name": "node-mysql-id",
   "version": "0.0.1",
   "description": "MYSQL query builder with indonesian language",
   "main": "index.js",
