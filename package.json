@@ -12,7 +12,7 @@
     "url": "https://github.com/ghifar1/node-mysql-id"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/" 
+    "registry": "https://npm.pkg.github.com/ghifar1" 
   },
   "keywords": [
     "mysql",
