@@ -1,5 +1,5 @@
 {
-  "name": "node-mysql-id",
+  "name": "@ghifar1/node-mysql-id",
   "version": "0.0.1",
   "description": "MYSQL query builder with indonesian language",
   "main": "index.js",
@@ -12,7 +12,7 @@
     "url": "https://github.com/ghifar1/node-mysql-id"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/ghifar1"
+    "registry": "https://npm.pkg.github.com/" 
   },
   "keywords": [
     "mysql",
