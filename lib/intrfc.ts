@@ -30,5 +30,6 @@ interface Statement extends Operator {
 
 export {
     Statement,
-    Operator
+    Operator,
+    HasilQuery
 }

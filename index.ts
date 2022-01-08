@@ -1,5 +1,5 @@
 import mysql, { ConnectionConfig, Connection, FieldInfo, MysqlError } from 'mysql'
-import { Operator, Statement } from './lib/intrfc'
+import { HasilQuery, Operator, Statement } from './lib/intrfc'
 import { kondisi } from './lib/helper'
 
 class MysqlId {
@@ -22,37 +22,37 @@ class MysqlId {
         }
     }
 
-    public pilihAtribut(atribut: string): Statement {
+    public pilihAtribut(atribut: string): this {
         this.sequel = `SELECT ${atribut}`
         return this
     }
 
-    public hapusDariTabel(tabel: string): Statement {
+    public hapusDariTabel(tabel: string): void {
         this.sequel = `DELETE FROM ${tabel}`
     }
 
-    public dariTabel(tabel: string): Statement {
+    public dariTabel(tabel: string): this {
         this.sequel += ` from ${tabel}`
         return this
     }
 
 
-    public dimana(atribut: string, operator?: string, nilai?: string): Operator {
+    public dimana(atribut: string, operator?: string, nilai?: string): this {
         this.sequel += ` WHERE ${atribut}${operator ? ` ${operator}` : ""}` + (nilai ? ` '${nilai}'` : "")
         return this
     }
 
-    public danDimana(atribut: string, operator?: string, nilai?: string): Operator {
+    public danDimana(atribut: string, operator?: string, nilai?: string): this {
         this.sequel += ` AND ${atribut}${operator ? ` ${operator}` : ""} ` + (nilai ? `' ${nilai}'` : "")
         return this
     }
 
-    public atauDimana(atribut: string, operator?: string, nilai?: string): Operator {
+    public atauDimana(atribut: string, operator?: string, nilai?: string): this {
         this.sequel += ` OR ${atribut}${operator ? ` ${operator}` : ""} ` + (nilai ? `' ${nilai}'` : "")
         return this
     }
 
-    public adaDi(val: Array<string>): Operator {
+    public adaDi(val: Array<string>): this {
         let arr = ''
         let maxArr = val.length
         val.forEach((value, index) => {
@@ -70,7 +70,7 @@ class MysqlId {
         return this
     }
 
-    public tidakAdaDi(val: Array<string>): Operator {
+    public tidakAdaDi(val: Array<string>): this {
         let arr = ''
         let maxArr = val.length
         val.forEach((value, index) => {
@@ -107,7 +107,7 @@ class MysqlId {
         this.sequel += ` ORDER BY ${atribut}`
     }
 
-    public async dataPertama(): Operator {
+    public async dataPertama(): Promise<HasilQuery> {
         return new Promise<HasilQuery>((resolve, reject) => {
             this.koneksi.query(this.sequel, (error, result, fields) => {
                 if (error) reject(error)
@@ -129,7 +129,7 @@ class MysqlId {
     /**
     * @deprecated gunakan dataPertama()
     */
-    public async dapatPertama(): Operator {
+    public async dapatPertama(): Promise<HasilQuery> {
         return new Promise<HasilQuery>((resolve, reject) => {
             this.koneksi.query(this.sequel, (error, result, fields) => {
                 if (error) reject(error)
@@ -147,7 +147,7 @@ class MysqlId {
         })
     }
 
-    public async semuaData(): Operator {
+    public async semuaData(): Promise<HasilQuery> {
         return new Promise<HasilQuery>((resolve, reject) => {
             this.koneksi.query(this.sequel, (error, result, fields) => {
                 if (error) reject(error)
